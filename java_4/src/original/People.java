@@ -1,7 +1,7 @@
 /**
  * 
  */
-package bin;
+package original;
 
 /**
  * カプセル化を学ぼう
@@ -20,19 +20,22 @@ public class People {
 	private int age;
 	private double height;
 	private double weight;
+	private String gender;
 	
-	People(String firstName,  String lastName, int age, double height, double weight){
+	People(String firstName,  String lastName, int age, double height, double weight, String gender){
 		People.count++;
 		this.firstName = firstName; 
 		this.lastName = lastName;
 		this.age = age;
 		this.height = height;
 		this.weight = weight;
+		this.gender = gender;
 		
 	}
-	People(String firstName, String middleName, String lastName, int age, double height, double weight){
-		this(firstName, lastName, age, height, weight);
+	People(String firstName, String middleName, String lastName, int age, double height, double weight, String gender){
+		this(firstName, lastName, age, height, weight, gender);
 		this.middleName = middleName;
+	
 	}
 	
 	// middleName　フィールドのゲッターを定義する
@@ -50,10 +53,13 @@ public class People {
 	public double bmi() {
 		return this.weight / this.height / this.height ;
 	}
+
+	
 	public void printData() {
 		System.out.println("私の名前は" + this.fullName() + "です");
 		System.out.println("年齢は" + age + "歳です");
 		System.out.println("BMIは" + Math.round(this.bmi()) + "です");
+		System.out.println("性別は" + this.gender + "です");
 	}
 	public void printCount() {
 		System.out.println("合計" + People.count + "人です");
