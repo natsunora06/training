@@ -1,0 +1,85 @@
+.header{
+  font-size: 30px;
+  width: auto;
+  height: 650px;
+  padding-top: 5px;
+}
+.title{
+  font-family: 'Acme', sans-serif;
+  color: #663300;
+  font-size: 80px;
+  text-align: center;
+}
+p{
+  text-align: center;
+}
+.pic1{
+  background: url(../img/coffee1.jpg);
+  background-repeat:no-repeat;
+  background-position: center;
+  width: auto;
+  height: 450px;
+}
+li{
+  list-style: none;
+  padding-left : 0;
+  font-family: 'Acme', sans-serif;
+  background: #FFFFCC;
+}
+
+.ul-float{
+  width: 500px;
+  margin:auto;
+}
+.ul-float li{
+  float: left;
+  padding: 0 10px;
+}
+
+
+.inline{
+  text-align:center;
+}
+.inline ul{
+  list-style-type: none;
+  padding-left: 0;
+}
+.inline li{
+  display: inline;
+}
+
+.inline-block{
+  text-align: center;
+}
+.inline-block li{
+  display: inline-block;
+  width: 50px;
+  margin: 30px;
+}
+.table-cell{
+  display: table;
+  margin: auto;
+}
+.table-cell li{
+  display: table-cell;
+  padding: 0 10px;
+}
+.top{
+  font-size: 100px;
+}
+.middle{
+  font-size: 50px;
+}
+.bottom{
+  vertical-align:top;
+  font-size: 50px;
+}
+
+.flex{
+  display: flex;
+  justify-content: center;
+}
+.flex li{
+  padding: 0 10px;
+  margin: 0 20px;
+}
