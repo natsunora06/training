@@ -1,0 +1,206 @@
+body{
+  margin: 0;
+}
+
+a{
+  text-decoraion :none;
+  /*
+     テキストに線は付かず、点滅もしない。
+     これが初期値。
+  */
+}
+.container{
+  width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.topbox{
+  padding: 180px 0 100px 0;
+  background-image: url(../img/coffee1.jpg) ;
+  /*
+  backgraund-image:url();
+  背景画像を指定
+   <BODY>や <TABLE>だけではなく、
+   <P>・ <DIV>・ <SPAN>などの要素にも
+   背景画像を指定することができる。
+  */
+  background-size:cover;
+  color: white;
+  text-align: center;
+}
+
+.topbox h1{
+  opcity: 0.7;
+  font-size: 45;
+  letter-spacing: 5px;
+}
+
+.topbox p{
+  opacity: 0.7;
+}
+
+.btn-sns{
+  margin: 10px 0;
+}
+.facebook{
+  background-color: #3b5998;
+  margin-right: 10px;
+}
+.btn-instagram{
+  color: #FFF;/*文字・アイコン色*/
+  border-radius: 4px;/*角丸に*/
+  position: relative;
+  display: inline-block;
+  text-align: center;/*中身を中央寄せ*/
+  line-height: 50px;/*高さと合わせる*/
+  vertical-align: middle;/*垂直中央寄せ*/
+  background: -webkit-linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
+  background: linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;/*グラデーション①*/
+  overflow: hidden;/*はみ出た部分を隠す*/
+  text-decoration:none;/*下線は消す*/
+  opacity: 0.8;
+  padding: 0 24px;
+}
+.btn-instagram:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;/*全体を覆う*/
+    height: 100%;/*全体を覆う*/
+    background: -webkit-linear-gradient(15deg, #ffdb2c, rgb(249, 118, 76) 25%, rgba(255, 77, 64, 0) 50%) no-repeat;
+    background: linear-gradient(15deg, #ffdb2c, rgb(249, 118, 76) 25%, rgba(255, 77, 64, 0) 50%) no-repeat;
+}
+.btn-instagram .fa-instagram{
+  font-size: 15px;/*アイコンサイズ*/
+  position: relative;
+  top: 4px;/*アイコン位置の微調整*/
+}
+
+.btn-instagram:hover{
+  opacity: 1;
+}
+
+.instagram{
+  background-color:
+}
+
+.twitter{
+  background-color: #55acee;
+}
+
+.btn{
+  padding: 8px 24px;
+  color: white;
+  display: inline-block;
+  opacity: 0.8;
+  border-radius: 4px;
+}
+.btn:hover{
+  opacity: 1;
+}
+.fa{
+  margin-right: 5px;
+}
+
+header{
+  height: 65px;
+  width: 100%;
+  background-color: rgba(34, 49, 52, 0.9);
+  position: fixed;
+  top:0;
+  z-index: 10;
+  color:white;s
+}
+.header-left{
+  float: left;
+  margin-left: 15px;
+}
+
+.header-right{
+  float: right;
+  background-color:rgba(255, 255, 255, 0.3);
+  transition: all 0.5s;
+}
+
+.header-right:hover{
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.header-right a {
+  line-height: 65px;
+  padding: 0 25px;
+  color: white;
+  display: block;
+}
+.middlebox {
+  height: 500px;
+  padding-bottom: 80px;
+  background-color: #f7f7f7;
+  text-align: center;
+}
+.heading {
+  padding-top: 60px;
+  padding-bottom: 30px;
+  color: #5f5d60;
+}
+
+.heading h2 {
+  font-weight: normal;
+}
+
+.coffee {
+  float: left;
+}
+
+.coffee-icon {
+  position: relative;
+}
+
+.coffee-icon p {
+  position: absolute;
+  top: 90px;
+  width: 100%;
+  font-weight: bold;
+}
+
+.txt-contents {
+  width: 80%;
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 12px;
+  color: #b3aeb5;
+}
+
+.heading h3 {
+  font-weight: normal;
+}
+
+.bottombox {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 80px;
+  text-align: center;
+}
+
+.message {
+  padding: 15px 40px;
+  background-color: #5dca88;
+  cursor: pointer;
+  box-shadow: 0 7px #1a7940;
+}
+
+.bottombox:active {
+  position: relative;
+  top: 7px;
+  box-shadow: none;
+}
+
+
+footer p {
+  color: #b3aeb5;
+  font-size: 12px;
+}
+
+footer {
+  padding-top: 30px;
+}
