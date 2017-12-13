@@ -1,4 +1,11 @@
 package original;
+/**
+ * original
+ * 
+ * main.java = Main.java
+ * person.java
+ */
+
 
 public class Person {
 	  public static void printData(String name, int age, double height, double weight) {
