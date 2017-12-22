@@ -1,0 +1,35 @@
+<div class="main users-edit">
+  <div class="container">
+    <div class="form-heading">ユーザー情報の編集</div>
+    <div class="form users-form">
+      <div class="form-body">
+        <!-- ERORR MESSAGE-->
+        <% @user.errors.full_messages.each do |message| %>
+          <div class="form-error">
+            <%= message %>
+          </div>
+        <% end %>
+        <%= form_tag("/users/#{@user.id}/update", {multipart:true}) do %>
+        <p>ユーザー名</p>
+        <!-- nameを初期値として表示してください -->
+        <input value="<%= @user.name%>" name="name" >
+        <p>画像</p>
+        <!-- 画像用のフォームを追加する -->
+        <input type="file" name="image">
+        <p>メールアドレス</p>
+        <!-- emailを初期値として表示してください -->
+        <input value="<%= @user.email%>" name="email" >
+         <!--
+          <div class="radio02">
+          <p>性別</p>
+          　<input type="radio" name="radio02" value="man" class="radio02-input" id="radio02-01">
+            <label for="radio02-01"><= @user.gender %></label>
+            <input type="radio" name="radio02" value="woman" class="radio02-input" id="radio02-02">
+            <label for="radio02-02"><= @user.gender %></label>
+          </div> -->
+        <input type="submit" value="保存">
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>

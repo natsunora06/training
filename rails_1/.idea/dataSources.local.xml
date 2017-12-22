@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="hoge.sqlite" uuid="134ac86c-e01a-4ebe-a255-e45bf0b83cd2">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+    <data-source name="development.sqlite3" uuid="08cfdf23-6878-4fdf-a680-b58303c8107d">
+      <database-info product="SQLite" version="3.16.1" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" />
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
       <secret-storage>master_key</secret-storage>
       <auth-required>false</auth-required>
-      <first-sync>true</first-sync>
+      <introspection-schemas>*:main</introspection-schemas>
     </data-source>
   </component>
 </project>
