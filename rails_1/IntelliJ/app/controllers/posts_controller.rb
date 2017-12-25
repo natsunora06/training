@@ -1,4 +1,13 @@
 class PostsController < ApplicationController
+
+  before_action :authenticate_user
+  def authenticate_user
+    if @current_user == nil
+      flash[:notice] = "ログインが必要です"
+      redirect_to("/login")
+    end
+  end
+
   def index
     @posts = Post.all.order(created_at: :desc)
   end

@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user, {only: [:index, :show, :edit, :update]}
+  before_action :forbid_login_user, {only: [:new, :create, :login_form, :login]}
+  before_action :ensure_correct_user,{only: [:edit, :update]}
+
   #　ユーザー一覧
   def index
     @users = User.all
@@ -21,11 +25,14 @@ class UsersController < ApplicationController
     @user = User.new(
         name: params[:name],
         email: params[:email],
-        image_name:"default_user.jpg"
+        image_name:"default_user.jpg",
+        password: params[:password]
+        #gender: params[:gender]
     )
-    #gender: params[:gender])
+
     #　登録成功かどうかの条件分岐
     if @user.save
+      session[:user_id] = @user.id
       flash[:notice] = "ユーザー登録が完了しました"
       redirect_to("/users/#{@user.id}")
     else
@@ -57,5 +64,41 @@ class UsersController < ApplicationController
     else
       render("users/edit")
     end
+
   end
+
+  def login_form
+  end
+
+  def login
+    # ログインするユーザーを特定する
+    @user = User.find_by(email: params[:email], password: params[:password])
+    # ユーザーが存在するか、しないか
+    if @user
+      session[:user_id] = @user.id
+      flash[:notice] = "ログインしました"
+      redirect_to("/posts/index")
+    else
+      @error_massage = "メールアドレスまたはパスワードが間違っています"
+      render("users/login_form")
+
+      @email = params[:email]
+      @password = params[:password]
+    end
+  end
+
+  def logout
+    session[:user_id] = nil
+    flash[:notice] = "ログアウトしました"
+    redirect_to("/login")
+  end
+
+  def ensure_correct_user
+    if @current_user.id != params[:id].to_i
+      flash[:notice] = "権限がありません"
+      redirect_to("/posts/index")
+    end
+
+  end
+
 end
