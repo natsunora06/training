@@ -26,9 +26,13 @@ class UsersController < ApplicationController
         name: params[:name],
         email: params[:email],
         image_name:"default_user.jpg",
-        password: params[:password]
-        #gender: params[:gender]
+        password: params[:password],
+        gender: [:man, :woman]
     )
+
+    if params[:gender].present?
+      @users = @users.get_by_gender params[:gender]
+    end
 
     #　登録成功かどうかの条件分岐
     if @user.save
@@ -50,7 +54,12 @@ class UsersController < ApplicationController
     @user =User.find_by(id: params[:id])
     @user.name = params[:name]
     @user.email = params[:email]
-    #@user.gender = params[:gender]
+    @user.gender = params[:gender]
+     # @user.gender = "#{@user.id}"
+     # gender = params[:gender]
+
+
+    #end
 
     if params[:image]
       @user.image_name = "#{@user.id}.jpg"
