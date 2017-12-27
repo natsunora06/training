@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   before_action :forbid_login_user, {only: [:new, :create, :login_form, :login]}
   before_action :ensure_correct_user,{only: [:edit, :update]}
 
+  #enum gender: {male:1, female:2}
+
   #　ユーザー一覧
   def index
     @users = User.all
@@ -26,8 +28,8 @@ class UsersController < ApplicationController
         name: params[:name],
         email: params[:email],
         image_name:"default_user.jpg",
-        password: params[:password],
-        gender: [:man, :woman]
+        password: params[:password]
+        #gender: [:male, :female]
     )
 
     if params[:gender].present?
@@ -101,6 +103,12 @@ class UsersController < ApplicationController
     flash[:notice] = "ログアウトしました"
     redirect_to("/login")
   end
+
+  def likes
+    @user = User.find_by(id: params[:id])
+    @likes = Like.where(user_id: @user.id)
+  end
+
 
   def ensure_correct_user
     if @current_user.id != params[:id].to_i
