@@ -1,0 +1,33 @@
+body{
+  background-color: #999966;
+  color: #FFFFFF;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+h1{
+  font: lighter 2em sans-serif;
+  letter-spacing: 0.7em;
+  margin: 50px 0px 10px;
+}
+
+img.big{
+  margin: 20px 0px 45px;
+  border: solid 8px #FFFFFF;
+}
+
+div.waku{
+  width: 100%;
+  background-color: #666633;
+  padding: 4px 0px 0px;
+  border-top: dashed 1px #FFFFFF;
+  border-bottom: dashed 1px #FFFFFF;
+}
+
+img.mini{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
