@@ -4,7 +4,7 @@ public class Operator {
 	
 	public static void main(String[] args) {
 		
-		// かつ
+		// １５から１８の間ならtrue
 		int age = 16;
 		int b = 1;
 		System.out.println(age <= 18 || age >= 15);

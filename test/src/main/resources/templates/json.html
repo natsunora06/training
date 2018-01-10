@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8"/>
+    <title>jQuery JSON</title>
+</head>
+<body>
+
+<div>
+    <span class="label">Message : </span>
+    <span class="sentence"></span>
+</div>
+<script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+<script type="text/javascript">
+    // JSON を取得して .message に表示。
+    console.log("ログ")
+    // コンソールに表示されるか確認（最初）
+
+    $(function() {
+        $.ajax({
+            //url: '/json',
+            url: '/cat',
+            // HelloController.java(messageを表示するための)とコネクトするためのURL
+            method: 'get',
+            cache: false
+        }).then(function(data) {
+            $('.sentence').text(data.message);
+            // sentenceは上記のメッセージを表示させる
+            // messageでHelloController.java(messageを表示するための)から値を持ってきている
+            console.log(data)
+            // 値が通っていればコンソールにも同じメッセージが表示される
+        });
+    });
+    console.log("rog!!")
+    // コンソールに表示されるか確認（最後）
+</script>
+
+</body>
+</html>
