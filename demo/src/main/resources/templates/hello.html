@@ -1,12 +1,58 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Title</title>
+    <title>Clock</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 </head>
 <body>
+    <div class="button">
+        <h1>時間お知らせ</h1>
+        <a href="#" class="square_btn">今何時？</a>
+    </div>
+    <span class="label">ただ今の時刻は</span>
+    <span id="time"></span>
+    <!-- th:text="${time}" -->
 
-    <h1>Hello World!</h1>
+    <!-- JavaScriptでの時刻表示
+    <script>
+        time();
+        function time(){
+            var now = new Date();
+            document.getElementById("time").innerHTML = now.toLocaleTimeString();
+        }
+        setInterval('time()',1000);
+    </script> -->
+
+    <script type="text/javascript">
+        $(function() {
+
+            $('.square_btn').click(function() {
+                $.ajax({
+                    url: '/cup',
+                    method: 'get',
+                    cache: false
+
+                }).then(function(data){
+                //var i;
+                //var nowTime = new Date();
+                //var nowHour = nowTime.getHours();
+                //var nowMin = nowTime.getMinutes();
+                //i = nowHour + '時' + nowMin + '分';
+                    $('#time').text(data.time);
+
+                    console.log(time)
+
+                //var date = new Date( getTime ) . toLocaleString();
+                //( '#jquery-sample-getTime' ) . text( getTime );
+
+                })
+            });
+        });
+
+    </script>
 
 </body>
 </html>
