@@ -1,6 +1,7 @@
 package com.example.demo;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,12 +22,15 @@ import java.util.Map;
 public class ClockApiController {
     @RequestMapping("/cup")
     public Map<String, String> path(){
+        // Mapで時間をわたす
             LocalTime localTime = LocalTime.now();
-            //model.addAttribute("time", localTime);
-           // @DateTimeFormat(pattern = "HH:mm:ss") @PathVariable LocalDate pathDate,
-           // @DateTimeFormat(pattern = "HH:mm:ss") @RequestParam LocalDate requestDate) {
-        System.out.println(localTime.toString());
-        // コンソールに時間表示
-        return Collections.singletonMap("time", localTime.toString());
+            System.out.println(localTime.getHour() + "時");
+            System.out.println(localTime.getMinute() + "分");
+            System.out.println(localTime.getSecond() + "秒");
+
+            System.out.println(localTime.toString());
+            // 時間が取得できているかコンソールで確認する表記
+            return Collections.singletonMap("time", localTime.getHour() + "時" +localTime.getMinute() + "分" + localTime.getSecond() + "秒");
+            // "time"で取得した時間をhtmlファイルにわたす
     }
 }

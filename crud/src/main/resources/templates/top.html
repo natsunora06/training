@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Post Page</title>
+    <!--<link rel="stylesheet" th:href="@{post.css}"/>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+</head>
+<body>
+    <header>
+        <h1>CRUD Comment Input</h1>
+    </header>
+    <div class="middle">
+        <div class="post">
+            <h3>投稿(登録機能)</h3>
+        </div>
+
+
+        <div class="sub-post">
+            <h5>コメントしてください</h5>
+            <input type="text" name="comment" id="comment"/>
+            <input type="submit" value="送信" class="button"/>
+        </div>
+
+        <div class="sub-post2">
+            <h5>今までの投稿です</h5>
+            <div class="message">
+                <ul>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(function() {
+            $('.button').click(function() {
+                console.log("テキストボックス：");
+                console.log($('#comment').val());  // inputに入力されたテキストを確認
+                var getData = ($('#comment').val());
+                // $.ajax({
+                //     url: '/cup',
+                //     method: 'get',
+                //     cache: false
+                // }).then(function(){
+                $("ul").append('<li>getData</li>');
+
+                     // console.log(data)
+            });
+        });
+    </script>
+
+</body>
+</html>
