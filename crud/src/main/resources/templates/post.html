@@ -19,6 +19,16 @@
     <div class="sub-post">
         <h5>今までの投稿です</h5>
         <!-- 投稿一覧を表示する -->
+        <table class="list">
+            <tr>
+                <td>ID</td>
+                <td>投稿内容</td>
+            </tr>
+            <tr th:each="list:${list}">
+                <td th:text="${list.id}"></td>
+                <td th:text="${list.content}"></td>
+            </tr>
+        </table>
 
     </div>
 </div>
