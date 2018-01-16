@@ -18,30 +18,14 @@
         </div>
 
 
-        <form class="sub-post" method="post" name="form1" action="/sample/:id">
+        <form class="sub-post" method="post" name="create" action="/post" accept-charset="UTF8">
             <h5>コメントしてください</h5>
-            <input type="text" name="comment" id="comment" th:value="${conent}"/>
+            <input type="text" name="content" id="comment"/>
             <input type="submit" value="送信" class="button"/>
         </form>
 
-        <div class="sub-post2">
-            <h5>今までの投稿です</h5>
-            <div class="message">
-                <!--
-                <ul>
-                </ul> -->
-                <table class="list">
-                    <tr>
-                        <td>ID</td>
-                        <td>投稿内容</td>
-                    </tr>
-                    <tr th:each="list:${list}">
-                        <td th:text="${list.id}"></td>
-                        <td th:text="${list.content}"></td>
-                </tr>
-                </table>
-            </div>
-        </div>
+
+
     </div>
 
     <script type="text/javascript">
@@ -55,7 +39,7 @@
                 //     method: 'get',
                 //     cache: false
                 // }).then(function(){
-                $("tr").append('<td th:text="${list.content}">' + getData+ '</td>');
+                $("tr").append('<td>' + getData+ '</td>');
 
                      // console.log(data)
             });

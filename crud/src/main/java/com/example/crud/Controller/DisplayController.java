@@ -28,19 +28,20 @@ public class DisplayController {
         return "top";
     }
 
+    // post.htmlファイルを表示する
 //    @GetMapping("/post")
 //    public String post(){
 //        return "post";
 //    }
 
 
-    // CRUD (Create) "入力をpost_testテーブルに登録する。
+     //CRUD (Create) "入力をpost_testテーブルに登録する。
 
-//    @RequestMapping(path = "/sample", method = RequestMethod.POST)
-//    String create(Model model, @ModelAttribute Detail Detail){
-//        jdbcTemplate.update("INSERT INTO post_test (content) values (?)", Detail.getId());
-//        return "redirect:/sample";
-//    }
+    @RequestMapping(path = "/post", method = RequestMethod.POST)
+    String create(Model model, @ModelAttribute Detail Detail){
+        jdbcTemplate.update("INSERT INTO post_test (content) values (?)", Detail.getContent());
+        return "redirect:/post";
+    }
 
 
     // CRUD (Read) "post_testテーブルのレコードを全件取得
